@@ -1,0 +1,24 @@
+<div class="container mt-5">
+<% @events.each_with_index do |event, index| %> 
+    <% if index % 2 == 0 %>
+        <div class="row">
+    <% end %>
+    <div class="col mt-2">
+        <div class="card" style="width: 18rem;">
+        <div class="card-body">
+            <h5 class="card-title"><%=event.title%></h5>
+            <h6 class="card-subtitle mb-2 text-muted"><%=event.adress%></h6>
+            <p class="card-text"><%=event.description%></p>
+            <% if event.user == current_user %>
+                <%= link_to "Delete", event_path(event), method: :delete, class: "btn btn-danger" %>
+            <% else %>
+                <%= link_to "Delete", event_path(event), method: :delete, class: "btn btn-danger disabled" %>
+            <% end %>
+        </div>
+        </div>
+    </div>
+    <% if index % 2 == 1 %>
+        </div>
+    <% end %>
+<%end%>
+</div>

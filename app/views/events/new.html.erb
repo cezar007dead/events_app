@@ -1,0 +1,24 @@
+<div class="mx-auto mt-5" style="max-width: 400px;">
+<h2>Create Event</h2>
+
+<%= form_for(@event) do |f| %>
+  <div class="field mb-3">
+    <%= f.label :title %><br />
+    <%= f.text_field :title, autofocus: true, class: "form-control" %>
+  </div>
+
+  <div class="field mb-3">
+    <%= f.label :description %><br />
+    <%= f.text_field :description, autofocus: true, class: "form-control" %>
+  </div>
+
+  <div class="field mb-3">
+    <%= f.label :adress %><br />
+    <%= f.text_field :adress, autofocus: true, class: "form-control" %>
+  </div>
+
+  <div class="actions">
+    <%= f.submit "Create", class: "btn btn-primary" %>
+  </div>
+<% end %>
+</div>
